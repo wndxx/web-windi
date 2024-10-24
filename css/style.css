@@ -1,0 +1,247 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+#about {
+  margin-top: 100px;
+}
+
+h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+section {
+  padding: 40px;
+}
+
+#headquarters {
+  text-align: center;
+}
+
+.image-container {
+  overflow: hidden;
+  position: relative;
+  height: 300px; /* Tentukan tinggi untuk container */
+  width: 100%;   /* Tentukan lebar penuh container */
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide img {
+  width: 100%;       /* Gambar mengisi lebar penuh */
+  height: 100%;      /* Gambar mengisi tinggi penuh */
+  object-fit: cover; /* Mengatur agar gambar tetap proporsional tanpa distorsi */
+}
+
+
+.dots {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dot {
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+  background-color: #ccc;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.dot.active {
+  background-color: #333;
+}
+
+#preview {
+  text-align: left;
+  font-family: Arial, sans-serif;
+}
+
+#preview h3 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+#preview p {
+  margin: 5px 0;
+  font-weight: bold;
+  color: #555;
+}
+
+#preview-name:before {
+  content: "Nama: ";
+  font-weight: normal;
+}
+
+#preview-email:before {
+  content: "Email: ";
+  font-weight: normal;
+}
+
+#preview-phone:before {
+  content: "Nomor Telepon: ";
+  font-weight: normal;
+}
+
+#preview-message:before {
+  content: "Pesan: ";
+  font-weight: normal;
+}
+.contact {
+  display: flex;
+  justify-content: space-between; /* Memberi spasi di antara form input dan preview */
+  align-items: flex-start;        /* Sejajarkan bagian atas form dan preview */
+  gap: 20px;                      /* Jarak antara form input dan preview */
+}
+
+#contactForm {
+  flex: 1;                        /* Form input akan menempati 50% ruang */
+  max-width: 45%;                 /* Batas maksimal lebar form */
+}
+
+#preview {
+  flex: 1;                        /* Preview akan menempati 50% ruang */
+  max-width: 45%;                 /* Batas maksimal lebar preview */
+  background-color: #f9f9f9;      /* Warna latar untuk memperjelas area preview */
+  padding: 20px;                  /* Jarak dalam untuk konten preview */
+  border-radius: 5px;             /* Sudut melengkung agar lebih rapi */
+}
+
+#contactForm input,
+#contactForm textarea {
+  width: 100%;                    /* Membuat input dan textarea mengisi lebar form */
+  padding: 8px;                   /* Spasi dalam untuk input */
+  border: 1px solid #ccc;         /* Batasan untuk input */
+  border-radius: 4px;             /* Sudut melengkung untuk input */
+  box-sizing: border-box;         /* Pastikan padding dihitung dalam ukuran elemen */
+}
+
+#contactForm button {
+  margin-top: 15px;               /* Jarak atas untuk tombol kirim */
+  padding: 10px 20px;             /* Spasi dalam untuk tombol */
+  background-color: #333;         /* Warna tombol */
+  color: white;                   /* Warna teks tombol */
+  border: none;                   /* Hilangkan border tombol */
+  border-radius: 4px;             /* Sudut melengkung tombol */
+  cursor: pointer;                /* Ubah kursor jadi pointer saat di-hover */
+}
+
+#contactForm button:hover {
+  background-color: #555;         /* Warna lebih gelap saat tombol di-hover */
+}
+
+@media (max-width: 768px) {
+  .contact {
+    flex-direction: column;       /* Layout vertikal untuk layar kecil */
+  }
+
+  #contactForm, #preview {
+    max-width: 100%;              /* Form dan preview memenuhi lebar penuh */
+  }
+}
+.paragraph-slider {
+  text-align: center;
+  margin: 50px auto;
+  width: 80%;               /* Sesuaikan lebar slider */
+}
+
+.paragraph-container {
+  position: relative;
+  height: 200px;            /* Tentukan tinggi yang sesuai untuk paragraf */
+  overflow: hidden;         /* Sembunyikan paragraf lain yang tidak aktif */
+}
+
+.paragraph {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.paragraph.active {
+  opacity: 1;               /* Paragraf aktif akan terlihat */
+}
+/* Styling dasar untuk modal */
+.modal {
+  display: none; /* Sembunyikan modal secara default */
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Background transparan hitam */
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+input[type="text"] {
+  padding: 10px;
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+
